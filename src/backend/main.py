@@ -47,6 +47,8 @@ def get_collections():
 def create_documents_collection():
     qdrant_client.create_collection(
         collection_name="documents",
+        # VectorParams is decided that how the collection of vectors will be stored in the Qdrant database. It has two parameters size and distance. 
+        # Size is the dimension of the vector and distance is the distance metric used to calculate the similarity between vectors.
         vectors_config = VectorParams(
             size = 3,
             distance = Distance.COSINE
